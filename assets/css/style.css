@@ -185,6 +185,14 @@ input:focus {
     gap: 10px;
 }
 
+.input-opt:hover {
+    border-color: var(--lime);
+}
+
+.input-opt > label {
+    cursor: pointer;
+}
+
 .calcular {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 700;
@@ -205,3 +213,4 @@ input:focus {
 .radio {
     accent-color: var(--lime);
 }
+

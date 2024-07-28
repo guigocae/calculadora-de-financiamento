@@ -35,14 +35,14 @@
           <label for="period" class="labels">Período Solicitado</label>
           <div class="input-construct">
             <input type="number" class="ip2" id="period" required>
-            <div class="input-symbol s2">Anos</div>
+            <div class="input-symbol s2" id="years">Anos</div>
           </div>
         </div>
         <div class="inputs">
           <label for="taxa" class="labels">Taxa de Juros a.a.</label>
           <div class="input-construct">
             <input type="number" class="ip2" id="taxa" required>
-            <div class="input-symbol s2">&percnt;</div>
+            <div class="input-symbol s2" id="percent">&percnt;</div>
           </div>
         </div>
 
@@ -50,11 +50,11 @@
       
       <fieldset>
         <legend class="labels">Tipo de Financiamento</legend>
-        <div class="input-opt">
+        <div class="input-opt" id="casa-input">
           <input type="radio" id="imovel" value="imovel" name="tipo" class="radio">
           <label for="imovel">Imóvel</label>
         </div>
-        <div class="input-opt">
+        <div class="input-opt" id="auto-input">
           <input type="radio" id="auto" value="auto" name="tipo" class="radio">
           <label for="auto">Automóvel</label>
         </div>
