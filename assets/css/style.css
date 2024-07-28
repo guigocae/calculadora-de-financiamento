@@ -1,0 +1,207 @@
+:root {
+    --lime: hsl(61, 70%, 52%);
+    --red: hsl(4, 69%, 50%);
+    --slate-100: hsl(202, 86%, 94%);
+    --slate-300: hsl(203, 41%, 72%);
+    --slate-500: hsl(200, 26%, 54%);
+    --slate-700: hsl(200, 24%, 40%);
+    --slate-900: hsl(202, 55%, 16%);
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--slate-100);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    background-color: white;
+    border-radius: 15px;
+    width: 800px;
+}
+
+#form {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.resultados {
+    flex: 1;
+    padding: 30px;
+    background-color: var(--slate-900);
+    color: white;
+    border-radius: 0 15px 15px 60px;
+}
+.pre-resultado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    height: 100%;
+    
+}
+
+.pos-resultado {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.display {
+    background-color: hsl(202, 55%, 12%);
+    border-top: 3px solid var(--lime);
+    border-radius: 5px;
+    padding: 20px;
+    display: block;
+}
+
+.line {
+    height: 0.5px;
+    background-color: var(--slate-500);
+    margin: 10px 0 20px;
+}
+
+.valor-parcela {
+    font-size: 2em;
+    line-height: 1.8em;
+    color: var(--lime);
+    font-weight: 700;
+}
+
+.valor-total {
+    font-size: 1em;
+    line-height: 2em;
+    color: white;
+    font-weight: 700;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+p {
+    color: var(--slate-500);
+    font-size: 12px;
+    line-height: 16px;
+}
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    color: var(--slate-900);
+    font-weight: 700;
+}
+
+.juncao {
+    display: flex;
+    gap: 20px;
+}
+
+.labels, #clear {
+    color: var(--slate-700);
+    font-size: 14px;
+}
+
+.input-construct {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.input-construct input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--slate-500);
+    height: 16px;
+    
+}
+
+.input-construct input:focus {
+    border-color: var(--lime);
+}
+
+.lime-style {
+    background-color: var(--lime) !important;
+    border-color: var(--lime) !important;
+}
+
+.ip1 {
+    border-left: none !important;
+    border-radius: 0 5px 5px 0;
+}
+
+.ip2 {
+    border-right: none !important;
+    border-radius: 5px 0 0 5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.input-symbol {
+    border: 1px solid var(--slate-500);
+    background-color: var(--slate-100);
+    color: var(--slate-700);
+    font-weight: 700;
+    padding: 11px;
+    font-size: 14px;
+}
+
+.s1 {
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.s2 {
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+}
+
+.input-opt {
+    padding: 10px;
+    border: 1px solid var(--slate-500);
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--slate-900);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.calcular {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--slate-900);
+    background-color: var(--lime);
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 240px;
+    cursor: pointer;
+}
+
+.fa-calculator {
+    margin-right: 10px;
+}
+
+.radio {
+    accent-color: var(--lime);
+}

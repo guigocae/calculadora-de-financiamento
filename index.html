@@ -2,60 +2,96 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Calculadora de Financiamento</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
 </head>
 <body>
+  <div class="container">
+    <div id="form">
+      <div class="title">
+        <h1>Calculadora de Financiamento</h1>
+        <a href="/" id="clear">Clear All</a>
+      </div>
+      <div class="inputs">
+        <label for="amount" class="labels">Valor a ser financiado</label>
+        <div class="input-construct">
+          <div class="input-symbol s1" id="amount-symbol">R&#36;</div>
+          <input type="number" class="ip1" id="amount" required>
+        </div>
+      </div>
+      <div class="juncao">
+        <div class="inputs">
+          <label for="period" class="labels">Período Solicitado</label>
+          <div class="input-construct">
+            <input type="number" class="ip2" id="period" required>
+            <div class="input-symbol s2">Anos</div>
+          </div>
+        </div>
+        <div class="inputs">
+          <label for="taxa" class="labels">Taxa de Juros a.a.</label>
+          <div class="input-construct">
+            <input type="number" class="ip2" id="taxa" required>
+            <div class="input-symbol s2">&percnt;</div>
+          </div>
+        </div>
 
-  Mortgage Calculator
-  Clear All
+      </div>
+      
+      <fieldset>
+        <legend class="labels">Tipo de Financiamento</legend>
+        <div class="input-opt">
+          <input type="radio" id="imovel" value="imovel" name="tipo" class="radio">
+          <label for="imovel">Imóvel</label>
+        </div>
+        <div class="input-opt">
+          <input type="radio" id="auto" value="auto" name="tipo" class="radio">
+          <label for="auto">Automóvel</label>
+        </div>
+      </fieldset>
+      <button class="calcular">
+        <i class="fa-solid fa-calculator"></i> Calcular Financiamento
+      </button>
+    </div>
+    <div class="resultados">
 
-  Mortgage Amount
+      <div class="pos-resultado">
+        <h2>Resultado Calculado</h2>
+        <p>Os valores mostrados foram baseados nas informações que você forneceu. Para ajustar o resultado, edite o formulário e toque em "calcular financiamento" novamente.</p>
+        <div class="display">
+          <div class="parcelas">
+            <p>Suas parcelas mensais</p>
+            <p class="valor-parcela"></p>
+          </div>
+          <div class="line"></div>
+          <div class="parcelas">
+            <p>Valor total ao longo do financiamento</p>
+            <p class="valor-total"></p>
+          </div>
+        </div>
+      </div>
 
-  Mortgage Term
+      <div class="pre-resultado">
+        <img src="assets/images/illustration-empty.svg" alt="arte representando valores com uma calculadora">
+        <h2>Resultados aparecem aqui</h2>
+        <p>Complete o formulário e toque em "calcular financiamento" para consultar o valor de suas parcelas.</p>
+      </div>
+    </div>
 
-  Interest Rate
-
-  Mortgage Type
-  Repayment
-  Interest Only
-
-  Calculate Repayments
-
-  <!-- Empty results start -->
-
-  Results shown here
-
-  Complete the form and click “calculate repayments” to see what 
-  your monthly repayments would be.
-
-  <!-- Empty results end -->
-
-  <!-- Completed results start -->
-
-  Your results
-
-  Your results are shown below based on the information you provided. 
-  To adjust the results, edit the form and click “calculate repayments” again.
-
-  Your monthly repayments
-
-  Total you'll repay over the term
-
-  <!-- Completed results end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Guilherme Caetano</a>.
   </div>
+
+ 
+  <script src="https://kit.fontawesome.com/9fa94335b9.js" crossorigin="anonymous"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
