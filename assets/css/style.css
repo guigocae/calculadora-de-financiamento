@@ -137,6 +137,7 @@ h1 {
 .lime-style {
     background-color: var(--lime) !important;
     border-color: var(--lime) !important;
+    color: var(--slate-700) !important;
 }
 
 .ip1 {
@@ -154,12 +155,21 @@ input:focus {
 }
 
 .input-symbol {
-    border: 1px solid var(--slate-500);
-    background-color: var(--slate-100);
-    color: var(--slate-700);
     font-weight: 700;
     padding: 11px;
     font-size: 14px;
+}
+
+.color-blue {
+    border: 1px solid var(--slate-500);
+    background-color: var(--slate-100);
+    color: var(--slate-700);
+}
+
+.color-red {
+    border: 1px solid var(--red);
+    background-color: var(--red);
+    color: white;
 }
 
 .s1 {
@@ -212,5 +222,12 @@ input:focus {
 
 .radio {
     accent-color: var(--lime);
+}
+
+.required {
+    margin-top: 10px;
+    color: var(--red);
+    font-size: 12px;
+    display: none;
 }
 

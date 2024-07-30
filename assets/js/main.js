@@ -16,26 +16,41 @@ const posResult = document.querySelector(".pos-resultado");
 var intervalID = window.setInterval(addLimeStyleClass, 10);
 var intervalID2 = window.setInterval(addRadioLimeBorder, 10);
 
-clear.addEventListener("click", () => {
-    if(posResult.style.display = "flex"){
-        preResult.style.display = "block";
-        posResult.style.display = "none";
-    }        
-});
-
 go.addEventListener("click", () => {
-    let meses = (+periodo.value) * 12;
-    let total = getTotalValue();
-    let parcelaReal = total / meses;
+    validateForm();
+    if(valor.value === "" || periodo.value === "" || juros.value === ""){
+        return
+    } else {
+        let meses = (+periodo.value) * 12;
+        let total = getTotalValue();
+        let parcelaReal = total / meses;
 
-    preResult.style.display = "none";
-    posResult.style.display = "flex";
+        preResult.style.display = "none";
+        posResult.style.display = "flex";
 
-    parcela.innerHTML = `R&#36; ${parcelaReal.toLocaleString('pt-br', {minimumFractionDigits: 2})}`;
-    totalValue.innerHTML = `R&#36; ${total.toLocaleString('pt-br', {minimumFractionDigits: 2})}`;
+        parcela.innerHTML = `R&#36; ${parcelaReal.toLocaleString('pt-br', {minimumFractionDigits: 2})}`;
+        totalValue.innerHTML = `R&#36; ${total.toLocaleString('pt-br', {minimumFractionDigits: 2})}`;
+    }
 
 });
 
+function validateForm(){
+    let array = [valor, periodo, juros];
+    let required = document.getElementsByClassName("required");
+    for(let i = 0; i < array.length; i++){
+        if(array[i].value === ''){
+            array[i].style.borderColor = "hsl(4, 69%, 50%)";
+            required[i].style.display = "block";
+            changeRedClass(array[i]);
+        } else {
+            array[i].style.borderColor = "hsl(200, 26%, 54%)";
+            required[i].style.display = "none";
+            changeBlueClass(array[i]);
+        }
+    }
+}
+
+// green border on input radio buttons
 
 function addRadioLimeBorder(){
     const r1 = document.getElementById("imovel"),
@@ -54,6 +69,7 @@ function addRadioLimeBorder(){
     }
 }
 
+//lime style to hover inputs
 
 function addLimeStyleClass() {
     if(document.activeElement === valor){
@@ -75,26 +91,47 @@ function addLimeStyleClass() {
     }
 }
 
-
-
 function getTotalValue() {
-    if(periodo.value === ''|| valor.value === '' || juros.value === ''){
-        return -1;
-    } else {
-        let meses = (+periodo.value) * 12;
-        let parcelaLivre = (+valor.value) / meses;
-        let taxaMes = (+juros.value) / 12;
+    let meses = (+periodo.value) * 12;
+    let parcelaLivre = (+valor.value) / meses;
+    let taxaMes = (+juros.value) / 12;
 
-        let total = 0;
-        let parcelaReal = parcelaLivre;
-        for(i = 1; i <= meses; i++){
-            parcelaReal += parcelaReal * (taxaMes/100);
-            total += parcelaReal;
-        }
-        return total;
+    let total = 0;
+    let parcelaReal = parcelaLivre;
+    for(i = 1; i <= meses; i++){
+        parcelaReal += parcelaReal * (taxaMes/100);
+        total += parcelaReal;
     }
-    
+    return total;
 }
+    
+
+function changeBlueClass(element){
+    if(element === valor){
+        document.getElementById("amount-symbol").classList.add("color-blue");
+        document.getElementById("amount-symbol").classList.remove("color-red");
+    } else if(element === periodo){
+        document.getElementById("years").classList.add("color-blue");
+        document.getElementById("years").classList.remove("color-red");
+    } else if(element === juros){
+        document.getElementById("percent").classList.add("color-blue");
+        document.getElementById("percent").classList.remove("color-red");
+    }
+}
+
+function changeRedClass(element){
+    if(element === valor){
+        document.getElementById("amount-symbol").classList.add("color-red");
+        document.getElementById("amount-symbol").classList.remove("color-blue");
+    } else if(element === periodo){
+        document.getElementById("years").classList.add("color-red");
+        document.getElementById("years").classList.remove("color-blue");
+    } else if(element === juros){
+        document.getElementById("percent").classList.add("color-red");
+        document.getElementById("percent").classList.remove("color-blue");
+    }
+}
+
 
 
 

@@ -21,29 +21,32 @@
     <div id="form">
       <div class="title">
         <h1>Calculadora de Financiamento</h1>
-        <a href="/" id="clear">Clear All</a>
+        <a href="/" id="clear">Limpar</a>
       </div>
       <div class="inputs">
         <label for="amount" class="labels">Valor a ser financiado</label>
         <div class="input-construct">
-          <div class="input-symbol s1" id="amount-symbol">R&#36;</div>
+          <div class="input-symbol s1 color-blue" id="amount-symbol">R&#36;</div>
           <input type="number" class="ip1" id="amount" required>
         </div>
+        <div class="required">Este campo é obrigatório</div>
       </div>
       <div class="juncao">
         <div class="inputs">
           <label for="period" class="labels">Período Solicitado</label>
           <div class="input-construct">
             <input type="number" class="ip2" id="period" required>
-            <div class="input-symbol s2" id="years">Anos</div>
+            <div class="input-symbol s2 color-blue" id="years">Anos</div>
           </div>
+          <div class="required">Este campo é obrigatório</div>
         </div>
         <div class="inputs">
           <label for="taxa" class="labels">Taxa de Juros a.a.</label>
           <div class="input-construct">
             <input type="number" class="ip2" id="taxa" required>
-            <div class="input-symbol s2" id="percent">&percnt;</div>
+            <div class="input-symbol s2 color-blue" id="percent">&percnt;</div>
           </div>
+          <div class="required">Este campo é obrigatório</div>
         </div>
 
       </div>
@@ -87,10 +90,8 @@
         <p>Complete o formulário e toque em "calcular financiamento" para consultar o valor de suas parcelas.</p>
       </div>
     </div>
-
   </div>
 
- 
   <script src="https://kit.fontawesome.com/9fa94335b9.js" crossorigin="anonymous"></script>
   <script src="assets/js/main.js"></script>
 </body>
