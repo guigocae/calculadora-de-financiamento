@@ -231,3 +231,19 @@ input:focus {
     display: none;
 }
 
+@media (max-width: 650px) {
+    .container {
+        height: 100%;
+        flex-direction: column;
+        border-radius: 0;
+    }
+    .resultados {border-radius: 0;}
+    .juncao {display: block;}
+    .juncao .inputs:first-child {margin-bottom: 20px;}
+    .calcular{margin: auto;}
+}
+
+@media (max-width: 400px) {
+    .title {display: block;}
+    .valor-parcela {font-size: 1.8em;}
+}

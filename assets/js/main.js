@@ -11,10 +11,9 @@ const totalValue = document.querySelector(".valor-total");
 const preResult = document.querySelector(".pre-resultado");
 const posResult = document.querySelector(".pos-resultado");
 
-
-
 var intervalID = window.setInterval(addLimeStyleClass, 10);
 var intervalID2 = window.setInterval(addRadioLimeBorder, 10);
+
 
 go.addEventListener("click", () => {
     validateForm();
@@ -50,6 +49,20 @@ function validateForm(){
     }
 }
 
+function getTotalValue() {
+    let meses = (+periodo.value) * 12;
+    let parcelaLivre = (+valor.value) / meses;
+    let taxaMes = (+juros.value) / 12;
+
+    let total = 0;
+    let parcelaReal = parcelaLivre;
+    for(i = 1; i <= meses; i++){
+        parcelaReal += parcelaReal * (taxaMes/100);
+        total += parcelaReal;
+    }
+    return total;
+}
+
 // green border on input radio buttons
 
 function addRadioLimeBorder(){
@@ -78,33 +91,18 @@ function addLimeStyleClass() {
         document.getElementById("amount-symbol").classList.remove("lime-style");
     }
 
-    if(document.activeElement === periodo){
+    if(document.activeElement === periodo)
         document.getElementById("years").classList.add("lime-style");
-    } else {
+    else
         document.getElementById("years").classList.remove("lime-style");
-    }
+    
     
     if(document.activeElement === juros){
         document.getElementById("percent").classList.add("lime-style");
     } else {
         document.getElementById("percent").classList.remove("lime-style");
     }
-}
-
-function getTotalValue() {
-    let meses = (+periodo.value) * 12;
-    let parcelaLivre = (+valor.value) / meses;
-    let taxaMes = (+juros.value) / 12;
-
-    let total = 0;
-    let parcelaReal = parcelaLivre;
-    for(i = 1; i <= meses; i++){
-        parcelaReal += parcelaReal * (taxaMes/100);
-        total += parcelaReal;
-    }
-    return total;
-}
-    
+} 
 
 function changeBlueClass(element){
     if(element === valor){
